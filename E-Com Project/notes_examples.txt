@@ -1,0 +1,64 @@
+//adding external files to document
+    CSS- <link href="co_base.css" rel="stylesheet"  />
+    JS- <script src="co_order.js" async></script>
+
+//linking to an id
+    <a href="file.path#id">conetnt</a>
+
+    //current page
+    <a href="#id">content</a>
+
+//mailto
+    <a href="mailto:curbside.thai@example.com">emailaddress@here.com</a>
+
+telephone link
+    <a href="tel:+1234567890">(123) 456 7890</a>
+
+// 1.22 contains hyperlink attributes
+    target=_blank
+
+//Calculating the initial cost of an order
+    function calcOrder(){
+        //create var to reference the form orderForm
+        var orderForm = document.forms.orderForm;
+
+        //get user chosen "model" option and apply value to cost variable
+        var mIndex = orderForm.elements.model.selectedIndex;
+        var mCost = orderForm.elements.model.options[mIndex].value;
+
+        //get user chosen "quantity" option and apply value to quantity variable
+        var qIndex = orderForm.elements.qty.selectedIndex;
+        var quantity = orderForm.elements.qty[qIndex].value;
+
+        //initial cost = cost x quantity
+        var initialCost = mCost * quantity;
+
+        //apply calculation to form
+        orderForm.elements.initialCost.value = initialCost;
+
+        //retrieve the cost of the user's protection plan
+        var pCost = document.querySelector('input[name="protection"]:checked').value*quantity; //query to select the option button checked for the protection field
+        orderForm.elements.protectionCost.value = pCost;
+
+        //calculate sales tax 5%
+        var salesTax = 0.05*(initialCost +pCost);
+        orderForm.elements.salesTax.valye = salesTax;
+
+        //calculate total cost
+        var totalCost = initialCost + pCost + salesTax;
+        orderForm.elements.totalCost.value = totalCost;
+}
+
+//have form calculations change on events
+    //event handlers for the web form to rerun functions on change
+        orderForm.elements.model.onchange = calcOrder;
+        orderForm.elements.qty.onchange = calcOrder;
+        
+        //loops through option buttons for protection field adding onclick event handlers to each
+        var planOptions = document.querySelectorAll('input[name = "protection"]');
+        for (var i =0; i < planOptions.length; i++) {
+            planOptions[i].onclick = calcOrder;
+
+//Append form data to open another file when form is submitted
+    //added to form opening tag
+    method="get" action="co_payment.html"

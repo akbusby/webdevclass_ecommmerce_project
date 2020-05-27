@@ -1,0 +1,228 @@
+@charset "utf-8";
+/*
+ E-Commerce Website Project
+    Author: Ave Busby
+    Class: COP2822C-2478-O
+    Due Date: 04/28/2020
+    Description: Main style sheet for Simply Cupcakes... that contains basic site styles
+*/
+
+/* HTML and body styles */
+html {
+    font: normal 16px Georgia, 'Times New Roman', Times, serif;
+    padding: 1rem;
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f8f8ff;
+    max-width: 1000px;
+    min-width: 600px;
+    width: 95%;
+}
+
+img#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+div#announcements > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border: 3px solid #0abab5;
+}
+
+header, footer {
+    background-color: #0abab5;
+    color: #f8f8ff;
+    border-color: black;
+    border-width: 5px;
+}
+
+/* Header Styles*/
+body > header > img {
+    display: block;
+    width: 100%;
+}
+
+h1 {
+    background-color: #0abab5;
+    color: #f8f8ff;
+    font-size: 2rem;
+}
+
+/* body styles */
+article {
+    background-color: #f8f8ff;
+     width: 60%;
+    border: 3px solid #0abab5;
+    padding: 10px;
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+
+article#welcome{
+    background-color: #f8f8ff;
+
+}
+
+#menuItems > dt {
+    font-weight: bold;
+}
+
+/* links */
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: black;
+}
+
+/* header nav styles */
+#headernav
+{
+    position: relative;
+    background-color: #f8f8ff;;
+    color:black;
+    font-size: 21px;
+    min-width: 100%;
+}
+
+#headernav > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+#headernav > ul > li > a:hover{
+    background: black;
+    color: #f8f8ff;
+}
+
+#headernav > ul > li {
+    background-color: #0abab5;
+    border: 3px solid #f8f8ff;
+    display: flex;
+    float: left;
+    padding: 50px;
+}
+
+#headernav > li a {
+    display: block;
+    padding: 8rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/* review styles */
+aside {
+    background-color: #f8f8ff;
+    float: right;
+    text-align: horizontal;
+    position: relative;
+    right: 0px;
+    border: 3px solid #0abab5;
+    width: 35%;
+    height: 22rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: scroll;
+}
+
+aside blockquote {
+    display: inline-block;
+    color: black;
+    background-color: #0abab5;
+    margin: 5px;
+}
+
+aside blockquote p::first-letter {
+    font-size: 120%;
+}
+
+aside blockquote::before {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+aside blockquote::after {
+    font-family: 'Times New Roman', Times, serif;
+    content: close-quote;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+footer {
+  clear: both;
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+ #information {
+    position: relative;
+    padding: 10px;
+}
+
+#footnavbox {
+    position: relative;
+
+}
+
+#footernav > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-content: center;
+}
+
+#footernav > li a {
+    display: block;
+    text-align: center;
+    color: #f8f8ff;
+    text-decoration: none;
+}
+
+#footernav > ul > li > a:hover{
+    background: black;
+    color: #f8f8ff;
+}
+
+#copyright {
+    clear: both;
+    align-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    nav#headernav {
+      float: none;
+      display: block;
+    }
+  
+    nav#headernav a {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+    }
+  }
